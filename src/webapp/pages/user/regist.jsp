@@ -21,6 +21,12 @@
 				this.src = "${basepath}kaptcha.jpg?d="+ new Date().toString();
 			})
 
+			$("#returnindex").click(function () {
+<%--				<jsp:forward page="client/clientservlet?action=pages"></jsp:forward>--%>
+				window.location = "index.jsp";
+			})
+
+
          $("#sub_btn").click(function()
 				 {
 					 // 验证用户名：必须由字母，数字下划线组成，并且长度为 5 到 12 位
@@ -88,7 +94,8 @@
 </head>
 <body>
 		<div id="login_header">
-			<img class="logo_img" alt="" src="static/img/logo.gif" >
+<%--			<a href="index.jsp"><img class="logo_img" alt="" src="static/img/logo.gif" id="returnindex"></a>--%>
+			<img class="logo_img" alt="" src="static/img/logo.gif" id="returnindex">
 		</div>
 		
 			<div class="login_banner">
