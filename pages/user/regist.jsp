@@ -15,6 +15,12 @@
 	<script type="text/javascript">
 		$(function ()
 		{
+
+			//验证码刷新
+			$("#code_img").click(function () {
+				this.src = "${basepath}kaptcha.jpg?d="+ new Date().toString();
+			})
+
          $("#sub_btn").click(function()
 				 {
 					 // 验证用户名：必须由字母，数字下划线组成，并且长度为 5 到 12 位
@@ -123,8 +129,8 @@
 									<br />
 									<label>验证码：</label>
 <!--									<input class="itxt" type="text" style="width: 150px;" name="code" id="code"/>-->
-									<input class="itxt" type="text" name="yaolei" style="width: 130px;" id="code" value=""/>
-									<img alt="" src="kaptcha.jpg" style="float: right; margin-right: 40px; width:100px;height: 40px">
+									<input class="itxt" type="text" name="yaolei" style="width: 130px;" id="code" value="点击图片可更换"/>
+									<img alt="" id="code_img" src="kaptcha.jpg" style="float: right; margin-right: 40px; width:100px;height: 40px">
 									<br />
 									<br />
 									<input type="submit" value="注册" id="sub_btn" />

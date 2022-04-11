@@ -28,7 +28,7 @@
 						<div class="login_box">
 							<div class="tit">
 								<h1>尚硅谷会员</h1>
-								<a href="regist.jsp">立即注册</a>
+								<a href="pages/user/regist.jsp">立即注册</a>
 							</div>
 							<div class="msg_cont">
 								<b></b>
@@ -43,7 +43,7 @@
 									<br />
 									<br />
 									<label>用户密码：</label>
-									<input class="itxt" type="password" placeholder="请输入密码" autocomplete="off" tabindex="1" name="password" />
+									<input class="itxt" type="password" placeholder="请输入密码" autocomplete="off" tabindex="1" name="password" "/>
 									<br />
 									<br />
 									<input type="submit" value="登录" id="sub_btn" />

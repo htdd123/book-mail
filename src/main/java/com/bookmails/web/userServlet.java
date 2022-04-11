@@ -23,10 +23,10 @@ public class userServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=UTF-8");
-        //获取session中的验证码
-        String token = (String) request.getSession().getAttribute(KAPTCHA_SESSION_KEY);
-        //删除session中的验证码
-        request.getSession().removeAttribute(KAPTCHA_SESSION_KEY);
+//        //获取session中的验证码
+//        String token = (String) request.getSession().getAttribute(KAPTCHA_SESSION_KEY);
+//        //删除session中的验证码
+//        request.getSession().removeAttribute(KAPTCHA_SESSION_KEY);
 
         String action =request.getParameter("action");
 
@@ -60,8 +60,12 @@ public class userServlet extends HttpServlet {
         {
             //获取请求参数
 //        response.setContentType("text/html; charset=UTF-8");
-            request.setCharacterEncoding("UTF-8");
-//          System.out.println(response.getCharacterEncoding());
+//            request.setCharacterEncoding("UTF-8");
+//          System.out.println(response.getCharacter
+          //获取session中的验证码
+        String token = (String) request.getSession().getAttribute(KAPTCHA_SESSION_KEY);
+        //删除session中的验证码
+        request.getSession().removeAttribute(KAPTCHA_SESSION_KEY);
             String username = request.getParameter("username");
             String password = request.getParameter("password");
             String email = request.getParameter("email");
@@ -82,6 +86,7 @@ public class userServlet extends HttpServlet {
                 {
                     //用户名可用
                     us.registuser(new user(username,password,email));
+                    request.getSession().setAttribute("username",username);
                     //跳转到注册成功界面
                     request.getRequestDispatcher("/pages/user/regist_success.jsp").forward(request,response);
                 }
