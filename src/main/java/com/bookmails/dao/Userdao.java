@@ -1,4 +1,4 @@
-package com.bookmails.dao.impl;
+package com.bookmails.dao;
 
 import com.bookmails.pojo.user;
 

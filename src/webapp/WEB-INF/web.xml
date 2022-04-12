@@ -11,4 +11,12 @@
         <servlet-name>KaptchaServlet</servlet-name>
         <url-pattern>/kaptcha.jpg</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>cartservlet</servlet-name>
+        <servlet-class>com.bookmails.web.CartServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>cartservlet</servlet-name>
+        <url-pattern>/cartservlet</url-pattern>
+    </servlet-mapping>
 </web-app>

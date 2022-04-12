@@ -1,8 +1,10 @@
 package com.bookmails.dao.impl;
 
+import com.bookmails.dao.Basedao;
+import com.bookmails.dao.Userdao;
 import com.bookmails.pojo.user;
 
-public class Userdaoimpl extends Basedao implements Userdao{
+public class Userdaoimpl extends Basedao implements Userdao {
     @Override
     public user queryUserByUsername(String username) {
         String sql = "select id,username,password,email from t_user where username =? ";

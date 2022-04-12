@@ -1,6 +1,6 @@
 package com.bookmails.service.impl;
 
-import com.bookmails.dao.impl.Userdao;
+import com.bookmails.dao.Userdao;
 import com.bookmails.dao.impl.Userdaoimpl;
 import com.bookmails.pojo.user;
 

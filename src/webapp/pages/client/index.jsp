@@ -31,7 +31,22 @@
 <meta charset="UTF-8">
 <title>书城首页</title>
 	<base href="<%=basepath%>">
+	<script type="text/javascript" src="static/jquery-1.7.2.js"></script>
 <link type="text/css" rel="stylesheet" href="static/css/style.css" >
+
+<%--	<Script type="text/javascript">--%>
+<%--		$(function(){--%>
+<%--			//给添加购物车按钮添加绑定购物测事件--%>
+<%--			$("button.addtocart").click(function (){--%>
+<%--				alert("asdaj");--%>
+<%--				//获取点击添加按钮的时候的商品id--%>
+<%--				&lt;%&ndash;var bookid = ${this}.attr("bookid");&ndash;%&gt;--%>
+<%--				// Location.href = "http://loaclhost:8080/bookmail/cartservlet?action=addItems&bookid=5";--%>
+<%--			})--%>
+
+<%--		})--%>
+<%--	</Script>--%>
+
 </head>
 <body>
 	
@@ -66,9 +81,14 @@
 				</form>
 			</div>
 			<div style="text-align: center">
-				<span>您的购物车中有3件商品</span>
 				<div>
-					您刚刚将<span style="color: red">时间简史</span>加入到了购物车中
+					<c:if test="${not empty sessionScope.cart.items}">
+						<span>您的购物车中已经有${sessionScope.cart.totalCount}件商品</span><br/>
+						您刚刚将<span style="color: red">${sessionScope.lastnookname}</span>加入到了购物车中
+					</c:if>
+					<c:if test="${empty sessionScope.cart.items}">
+						<span style="color: red">当前购物车为空</span>
+					</c:if>
 				</div>
 			</div>
 			<c:forEach items="${requestScope.paged.items}" var="book">
@@ -98,7 +118,7 @@
 							<span class="sp2">${book.stock}</span>
 						</div>
 						<div class="book_add">
-							<button>加入购物车</button>
+							<button bookid="${book.id}"  bookname="${book.name}" class="addtocart">加入购物车</button>
 						</div>
 					</div>
 				</div>
@@ -208,7 +228,32 @@
 		</div>
 	
 	</div>
-	
+
+	<Script type="text/javascript">
+		$(function(){
+			//给添加购物车按钮添加绑定购物测事件
+			$("button.addtocart").click(function (){
+				//判断用户是否已经登录
+				if(${not empty sessionScope.user})
+				{
+					var bookid = $(this).attr("bookid");
+					var bookname = $(this).attr("bookname");
+					var a = "是否要添加一本《"+bookname+"》到购物车";
+					//提示是否需要添加商品
+					if(confirm(("是否添加《"+bookname+"》到购物车"))){
+						//获取点击添加按钮的时候的商品id
+						var bookid = $(this).attr("bookid");
+						location.href = "cartservlet?action=addItems&bookid="+bookid;
+					};
+				}
+				else
+				{
+					alert("您当前还没登录，请先登录方可添加购物车");
+				}
+
+			})
+		})
+	</Script>
 	<div id="bottom">
 		<span>
 			尚硅谷书城.Copyright &copy;2015

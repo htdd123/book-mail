@@ -1,10 +1,12 @@
 package com.bookmails.dao.impl;
 
+import com.bookmails.dao.Basedao;
+import com.bookmails.dao.bookDao;
 import com.bookmails.pojo.book;
 
 import java.util.List;
 
-public class bookdaoimpl extends Basedao implements bookDao{
+public class bookdaoimpl extends Basedao implements bookDao {
     @Override
     public int addBook(book b) {
         String sql="insert into t_book(`name`,`author`,`price`,`sales`,`stock`,`img_path`) values(?,?,?,?,?,?)";

@@ -12,7 +12,7 @@ public class webutiles {
     {
 //        user u = new user();
 //        System.out.println("注入之前："+bean);
-//        System.out.println("注入之后"+bean);
+//        System.out.println("注入之后"+bean);k
         try {
             BeanUtils.populate(bean,req.getParameterMap());
         } catch (IllegalAccessException e) {

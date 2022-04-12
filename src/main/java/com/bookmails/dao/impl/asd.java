@@ -1,6 +1,8 @@
 package com.bookmails.dao.impl;
 
-public class asd extends Basedao{
+import com.bookmails.dao.Basedao;
+
+public class asd extends Basedao {
     public void asdf(int a,int b)
     {
 

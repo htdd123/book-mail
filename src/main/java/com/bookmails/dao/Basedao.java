@@ -1,4 +1,4 @@
-package com.bookmails.dao.impl;
+package com.bookmails.dao;
 
 import com.bookmails.utils.jdbcutils;
 import org.apache.commons.dbutils.QueryRunner;

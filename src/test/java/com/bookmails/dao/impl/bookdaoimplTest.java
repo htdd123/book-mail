@@ -1,10 +1,9 @@
 package com.bookmails.dao.impl;
 
+import com.bookmails.dao.bookDao;
 import com.bookmails.pojo.Paged;
 import com.bookmails.pojo.book;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class bookdaoimplTest {
       bookDao bd = new bookdaoimpl();

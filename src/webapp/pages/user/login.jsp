@@ -10,11 +10,20 @@
 <meta charset="UTF-8">
 <title>尚硅谷会员登录页面</title>
 	<base href="<%=basepath%>">
+	<script type="text/javascript" src="static/jquery-1.7.2.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			$("#returnindex").click(function () {
+				<%--				<jsp:forward page="client/clientservlet?action=pages"></jsp:forward>--%>
+				window.location = "index.jsp";
+			})
+		})
+	</script>
 <link type="text/css" rel="stylesheet" href="static/css/style.css" >
 </head>
 <body>
 		<div id="login_header">
-			<img class="logo_img" alt="" src="static/img/logo.gif" >
+			<img class="logo_img" id="returnindex"alt="" src="static/img/logo.gif" >
 		</div>
 		
 			<div class="login_banner">
