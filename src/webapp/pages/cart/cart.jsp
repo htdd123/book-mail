@@ -21,7 +21,7 @@
 			<img class="logo_img" alt="" src="static/img/logo.gif" >
 			<span class="wel_word">购物车</span>
 			<div>
-				<span>欢迎<span class="um_span">${sessionScope.username}</span>光临尚硅谷书城</span>
+				<span>欢迎<span class="um_span">${sessionScope.user.username}</span>光临尚硅谷书城</span>
 				<a href="order/order.jsp">我的订单</a>
 				<a href="index.jsp">注销</a>&nbsp;&nbsp;
 				<a href="index.jsp">返回</a>
@@ -60,7 +60,7 @@
 			<span class="cart_span">购物车中共有<span class="b_count">${sessionScope.cart.totalCount}</span>件商品</span>
 			<span class="cart_span">总金额<span class="b_price">${sessionScope.cart.totalPrice}</span>元</span>
 			<span class="cart_span"><a class="clear" href="cartservlet?action=clearall">清空购物车</a></span>
-			<span class="cart_span"><a href="checkout.jsp">去结账</a></span>
+			<span class="cart_span"><a href="OrderServlet?action=createOrder">去结账</a></span>
 		</div>
 		</c:if>
 	</div>

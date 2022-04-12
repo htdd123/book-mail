@@ -67,7 +67,7 @@
 				</c:if>
 
 				<a href="pages/cart/cart.jsp">购物车</a>
-				<a href="pages/manager/manager.jsp">后台管理</a>
+				<a class="houtai">后台管理</a>
 			</div>
 	</div>
 	<div id="main">
@@ -254,6 +254,23 @@
 			})
 		})
 	</Script>
+		<Script type="text/javascript">
+				$(function(){
+					//给添加购物车按钮添加绑定购物测事件
+					$("a.houtai").click(function (){
+						//判断用户是否已经登录
+						if(${not empty sessionScope.user})
+						{
+								location.href = "pages/manager/manager.jsp";
+						}
+						else
+						{
+							alert("您当前还没登录，请先登录方可进入后台管理系统");
+						}
+
+					})
+				})
+		</Script>
 	<div id="bottom">
 		<span>
 			尚硅谷书城.Copyright &copy;2015
